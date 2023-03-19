@@ -142,7 +142,7 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 <br>
 	## Original Author
 * **Justin Majetich** - [justinmajetich](https://github.com/justinmajetich)
-* **Ezra Nobrega** - [Ezra Nobrega](https://github.com/)
+
 ---
 
 ## Authors
