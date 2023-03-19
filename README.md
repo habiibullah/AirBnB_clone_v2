@@ -147,4 +147,4 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 
 ## Authors
 * **Daniel Mbedobe** - [Mbedobe](https://github.com/Mbedobe)
-* **Habiibullah** - [habiibullah](https://github.com/habiibullah)
+* **Habiibullah Ajiboye** - [habiibullah](https://github.com/habiibullah)
