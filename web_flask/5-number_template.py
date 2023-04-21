@@ -47,17 +47,17 @@ def python_text(text="is cool"):
 
 
 @app.route('/number/<int:n>')
-def text_if_int(n):
+def text_int(n):
     """display text only if int given"""
-    return "{:d} is a number".format(n)
+    return "{} is a number".format(n)
 
 
 @app.route('/number_template/<int:n>')
-def html_if_int(n):
+def html_int(n):
     """display html page only if int given
        place given int into html template
     """
-    return render_template("5-number.html", s=n)
+    return render_template("5-number.html", n=n)
 
 
 
