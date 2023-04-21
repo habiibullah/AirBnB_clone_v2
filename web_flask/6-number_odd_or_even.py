@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-script starts Flask web app
+\script starts Flask web app
     listen on 0.0.0.0, port 5000
     routes: /:                    display "Hello HBNB!"
             /hbnb:                display "HBNB"
@@ -8,11 +8,9 @@ script starts Flask web app
             /python/<text>:       display "Python" + text (default="is cool")
             /number/<n>:          display "n is a number" only if int
             /number_template/<n>: display HTML page only if n is int
+            /number_odd_or_even/<n>: display HTML page; display odd/even info
 """
-
-from flask import Flask
-from flask import render_template
-
+from flask import Flask, render_template
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
@@ -47,19 +45,29 @@ def python_text(text="is cool"):
 
 
 @app.route('/number/<int:n>')
-def text_int(n):
+def if_text_int(n):
     """display text only if int given"""
     return "{:d} is a number".format(n)
 
-
 @app.route('/number_template/<int:n>')
-def html_int(n):
+def html_if_int(n):
     """display html page only if int given
        place given int into html template
     """
-    return render_template("5-number.html", n=n)
+    return render_template('5-number.html', n=n)
 
+
+@app.route('/number_odd_or_even/<int:n>')
+def int_odd_or_even(n):
+    """display html page only if int given
+       place given int into html template
+       substitute text to display if int is odd or even
+    """
+    is_odd_or_even = "even" if (n % 2 == 0) else "odd"
+    return render_template('6-number_odd_or_even.html',
+                           n=n, is_odd_or_even=is_odd_or_even)
 
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
