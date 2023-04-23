@@ -13,7 +13,7 @@ script starts Flask web app
 """
 
 from models import storage
-from models import *
+from models.state import State
 from flask import Flask, render_template
 app = Flask(__name__)
 app.url_map.strict_slashes = False
